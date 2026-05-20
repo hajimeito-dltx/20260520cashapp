@@ -4,6 +4,9 @@ import axios from 'axios'
 
 const ID = ref('')
 const Name = ref('')
+const Date = ref('')
+const Amount = ref('')
+
 const dataList = ref([])
 
 const addData = async () => {
@@ -15,6 +18,8 @@ const addData = async () => {
   const param = {
     ID: ID.value,
     Name: Name.value,
+    Date: Date.value,
+    Amount: Amount.value
   }
 
   const response = await axios.post(
@@ -59,10 +64,28 @@ const readData = async () => {
           placeholder="Nameを入力…"
         />
       </v-col>
+
+      <v-col cols="6">
+        <v-text-field
+          class="ml-6 mr-6"
+          v-model="Date"
+          label="Dateを入力(YYYY-MM-DD)"
+          placeholder="Dateを入力…"
+        />
+      </v-col>
+
+      <v-col cols="6">
+        <v-text-field
+          class="ml-6 mr-6"
+          v-model="Amount"
+          label="金額を入力"
+          placeholder="金額を入力…"
+        />
+      </v-col>
     </v-row>
 
     <v-row class="mb-3 mt-3" align="center" justify="center">
-      入力内容　ID: {{ ID }} Name: {{ Name }}
+      入力内容　ID: {{ ID }} Name: {{ Name }}　Date: {{ Date }} Amount: {{ Amount }}
       <v-btn
         @click="addData"
         color="indigo"
@@ -84,7 +107,7 @@ const readData = async () => {
       class="mb-2"
       justify="center"
     >
-      ID: {{ data.ID }}, Name: {{ data.Name }}
+      ID: {{ data.ID }}, Name: {{ data.Name }}, Date: {{ data.Date }}, Amount: {{ data.Amount }}
     </v-row>
   </v-container>
 </template>
