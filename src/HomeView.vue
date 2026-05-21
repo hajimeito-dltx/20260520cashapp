@@ -43,7 +43,7 @@ const readData = async () => {
 <template>
   <v-container>
     <v-row class="text-h3 mb-3 mt-3" justify="center">
-      APIに接続してみよう
+      入出金記録を取ろう
     </v-row>
 
     <v-row class="mb-3 mt-3" align="center" justify="center">
@@ -85,7 +85,7 @@ const readData = async () => {
     </v-row>
 
     <v-row class="mb-3 mt-3" align="center" justify="center">
-      入力内容　ID: {{ ID }} Name: {{ Name }}　Date: {{ Date }} Amount: {{ Amount }}
+      入力内容　　ID: {{ ID }}　Name: {{ Name }}　Date: {{ Date }}　金額: {{ Amount }}
       <v-btn
         @click="addData"
         color="indigo"
