@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import axios from 'axios'
 
 const ID = ref('')
@@ -38,6 +38,20 @@ const readData = async () => {
   console.log(response.data)
   dataList.value = response.data.List
 }
+
+
+
+
+
+  const totalAmount = computed(() => {
+    return dataList.value.reduce((sum, data) => sum + data.Amount, 0);
+  });
+
+
+
+
+
+
 </script>
 
 <template>
@@ -101,6 +115,24 @@ const readData = async () => {
       </v-btn>
     </v-row>
 
+
+
+
+
+    <v-row
+      justify="center
+      class="mb-2"
+      v-for="(data, index) in dataList"
+      :key="index"
+    >
+      合計金額：　  {{totalAmount}}
+    </v-row>
+
+
+
+
+
+
     <v-row
       v-for="(data, index) in dataList"
       :key="index"
@@ -109,5 +141,7 @@ const readData = async () => {
     >
       ID: {{ data.ID }}, Name: {{ data.Name }}, Date: {{ data.Date }}, Amount: {{ data.Amount }}
     </v-row>
+
+    
   </v-container>
 </template>
