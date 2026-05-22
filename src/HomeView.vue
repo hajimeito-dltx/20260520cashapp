@@ -122,8 +122,6 @@ const readData = async () => {
     <v-row
       justify="center"
       class="mb-2"
-      v-for="(data, index) in dataList"
-      :key="index"
     >
       合計金額：　  {{totalAmount}}
     </v-row>
