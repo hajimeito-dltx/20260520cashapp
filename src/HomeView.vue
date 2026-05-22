@@ -120,8 +120,6 @@ const readData = async () => {
 
 
     <v-row
-      v-for="(data, index) in dataList"
-      :key="index"
       justify="center"
       class="mb-2"
     >
