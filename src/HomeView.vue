@@ -66,6 +66,7 @@ const readData = async () => {
           class="ml-6 mr-6"
           v-model="ID"
           label="IDを入力"
+          clearable
           placeholder="IDを入力…"
         />
       </v-col>
@@ -114,6 +115,9 @@ const readData = async () => {
         現在の登録内容を表示する
       </v-btn>
     </v-row>
+
+
+
 
 
 
